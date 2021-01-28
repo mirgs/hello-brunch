@@ -5,4 +5,4 @@ build-job:
     stage: build
     script:
         - echo "Hello, GitLab"
-        - docker-compose build
+        - docker-compose build .
