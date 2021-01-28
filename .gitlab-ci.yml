@@ -5,4 +5,10 @@ build-job:
     stage: build
     script:
         - echo "Hello, GitLab"
-        - npm init -y
+        - yarn
+        - yarn build
+
+deploy-job:
+    stage: deploy
+    script:
+        - echo "Deploy"
