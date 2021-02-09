@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker-compose build -t hello-brunch'
+                sh 'docker-compose build'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
 
         stage('Trivy') {
             steps {
-                sh 'trivy image --format json --output trivy-results-hello-brunch.json hello-brunch'
+                sh 'trivy image --format json --output trivy-results-hello-brunch.json hello-brunch:latest'
             }
             post {
                 always {
