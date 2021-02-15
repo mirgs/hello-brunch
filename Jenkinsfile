@@ -7,14 +7,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                 git url: 'http://10.250.10.2:8929/root/hello-brunch-gitlab.git', branch: 'publish'
                 sh 'docker-compose build'
             }
         }
-        stage('Deploy') {
+        stage('Publish') {
             steps {
-                // Especificamos la rama que en github ahora es main, no master
-                sh 'docker-compose up -d'
+                withDockerRegistry([credentialsId: 'gitlab-registry', url:'http://10.20.10.2:5050']) {
+                    //cont.push()
+                    //cont.push('latest')
+                }
             }
         }
     }
 }
+
