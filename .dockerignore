@@ -1,0 +1,7 @@
+node_modules/
+.git
+.gitiignore
+Dockerfile
+.dockerignore
+docker-compose.yml
+Jenkinsfile
