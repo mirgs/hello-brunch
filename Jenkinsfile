@@ -19,7 +19,7 @@ pipeline {
                     sh 'docker tag hello-brunch:latest 10.250.10.2:5050/root/hello-brunch-gitlab:BUILD-1.${BUILD_NUMBER}'
                     sh 'docker push 10.250.10.2:5050/root/hello-brunch-gitlab:BUILD-1.${BUILD_NUMBER}'
                     sh 'git tag BUILD-1.${BUILD_NUMBER}'
-                    sh 'git push 10.250.10.2:5050/root/hello-brunch-gitlab:BUILD-1.${BUILD_NUMBER} --tags'
+                    sh 'git push --tags'
                     
                 }
             }
