@@ -25,6 +25,13 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                withDockerRegistry([credentialsId: 'registry-ssh-deploy', url:'http://10.250.10.2:5050']) {
+                    sh 'ssh -t -o "StrickHostKeyhecking no" deploy@10.250.10.2 "docker-compose pull && docker-compose up -d"'               
+                }
+            }
+        }
     }
 }
 
