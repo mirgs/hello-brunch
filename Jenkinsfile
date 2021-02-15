@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 git url: 'http://10.250.10.2:8929/root/hello-brunch-gitlab.git', branch: 'publish'
+                //git url: 'http://10.250.10.2:8929/root/hello-brunch-gitlab.git', branch: 'publish'
                 sh 'docker-compose build'
             }
         }
